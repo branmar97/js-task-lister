@@ -18,3 +18,7 @@ function addItem(e){
     link.addEventListener('click', deleteItem);
     e.preventDefault();
 }
+
+function deleteItem(e){
+   e.target.parentNode.parentNode.remove();
+}
