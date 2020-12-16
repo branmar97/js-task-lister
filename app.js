@@ -10,15 +10,28 @@ function addItem(e){
     li = document.createElement('li')
     li.className = 'collection-item';
     li.innerText = value;
+
     const link = document.createElement('a');
     link.className = 'delete-item secondary-content'
     link.innerHTML = '<i class="fa fa-remove"></i>'
+
     li.appendChild(link);
     list.appendChild(li);
+
     link.addEventListener('click', deleteItem);
+
     e.preventDefault();
 }
 
 function deleteItem(e){
    e.target.parentNode.parentNode.remove();
 }
+
+function clearItems(e){
+    while (list.firstChild){
+        list.removeChild(list.firstChild);
+    }
+
+    e.preventDefault();
+}
+
