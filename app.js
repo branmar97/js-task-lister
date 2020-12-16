@@ -3,6 +3,10 @@ const clearBtn = document.getElementById('clear-tasks-btn');
 const list = document.querySelector('ul.collection');
 const delBtns = document.querySelectorAll('.delete-item');
 
+addBtn.addEventListener('click', addItem);
+clearBtn.addEventListener('click', clearItems);
+delBtns.forEach(btn => btn.addEventListener('click', deleteItem));
+
 function addItem(e){
     const textBox = document.getElementById('task');
     const value = textBox.value;
